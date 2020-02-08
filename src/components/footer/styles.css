@@ -1,0 +1,28 @@
+.footer {
+    margin-top: 80px !important;
+    margin-bottom: 40px !important;
+}
+
+.footer__social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer__center {
+    padding: 20px 0 0 0;
+    color: rgba(255,255,255,.6);
+    text-align: center;
+}
+
+.footer__spacer {
+    margin-bottom: 4px;
+}
+
+.footer__highlight {
+    color: white;
+}
+
+.footer__icon {
+    margin: 0 8px;
+}
