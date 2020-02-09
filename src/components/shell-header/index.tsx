@@ -1,12 +1,9 @@
 import React from 'react';
-import { useScrollListener } from '../../ui/utils/use-scroll-listener';
 import { Link } from 'react-router-dom';
 
 import './styles.css';
 
 export const ShellHeader: React.FC = () => {
-
-    const y = useScrollListener();
 
     return <div className="shell__header-container">
         <header className="shell__header center-block">
@@ -23,4 +20,5 @@ export const ShellHeader: React.FC = () => {
             </nav>
         </header>
     </div>
+
 }

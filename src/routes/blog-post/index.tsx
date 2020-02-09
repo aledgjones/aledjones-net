@@ -1,5 +1,6 @@
 import React from 'react';
-import { mdiEmoticonSadOutline, mdiEmail, mdiEmailOutline, mdiFacebookBox, mdiFacebook, mdiAt, mdiTwitterBox, mdiLinkedinBox, mdiReddit, mdiWhatsapp } from '@mdi/js';
+import { EmailShareButton, FacebookShareButton, TwitterShareButton, LinkedinShareButton } from "react-share";
+import { mdiEmoticonSadOutline, mdiEmail, mdiFacebookBox, mdiTwitterBox, mdiLinkedinBox } from '@mdi/js';
 import { useParams, Link } from "react-router-dom";
 
 import { Spinner, Icon, Button } from '../../ui';
@@ -10,17 +11,6 @@ import { useBlogPost, useStore } from '../../shell/store';
 import { Transition } from '../../components/transition';
 import { Tags } from '../../components/tags';
 import Color from 'color';
-
-import {
-    EmailShareButton,
-    FacebookShareButton,
-    TwitterShareButton,
-    LinkedinShareButton,
-    RedditShareButton,
-    WhatsappShareButton,
-    FacebookMessengerShareButton,
-
-} from "react-share";
 
 import './styles.css';
 import 'highlight.js/styles/vs2015.css';
