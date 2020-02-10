@@ -4,11 +4,9 @@
     left: 0;
     width: 100%;
     z-index: 1000000;
-    background-color: rgb(20,20,20);
-}
-
-.shell__header-container--over {
+    background-color: rgba(20,20,20,.9);
     box-shadow: 0 0 8px rgba(0,0,0,.5);
+    backdrop-filter: blur(2px);
 }
 
 .shell__header {

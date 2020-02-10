@@ -2,7 +2,7 @@ import Color from "color";
 import shortid from "shortid";
 import { Event } from "./event";
 
-interface Point { key: string, x: number, y: number, stagger: number, links: string[] };
+interface Point { key: string, x: number, y: number, dx: number, dy: number, stagger: number, links: string[] };
 interface Points { [key: string]: Point };
 interface MessageProps { type: Event, canvas: OffscreenCanvas, color: string, width: number, height: number };
 
@@ -12,7 +12,8 @@ class Renderer {
 
     private order: string[] = [];
     private points: Points = {};
-    private edgeColor = Color(this.color).alpha(.1).toString();
+
+    private linkColor = Color(this.color).alpha(.1).toString();
 
     constructor(private canvas: OffscreenCanvas, private color: string) {
         this.tick();
@@ -38,7 +39,7 @@ class Renderer {
         });
         const sorted = distances.sort((a, b) => a[1] - b[1]);
 
-        for (let i = 1; i <= 6; i++) {
+        for (let i = 1; i <= 8; i++) {
             const [key] = sorted[i];
             const point = this.point(key);
             if (!point.links.includes(origin.key)) {
@@ -51,14 +52,14 @@ class Renderer {
     }
 
     private tick() {
-        let itr = 0;
+        let x = 0;
         setInterval(() => {
             for (let i = 0; i < this.order.length; i++) {
                 const point = this.point(this.order[i]);
-                point.x = point.x + ((Math.sin(itr / 30.0) * point.stagger * .5));
-                point.y = point.y + ((Math.sin(itr / 25.0) * point.stagger * .5));
+                point.dx = point.x + Math.sin(0.01 * x) * (50 * point.stagger);
+                point.dy = point.y + Math.sin(0.02 * x) * (30 * point.stagger);
             }
-            itr++;
+            x++;
         }, 1000 / 30);
     }
 
@@ -70,25 +71,25 @@ class Renderer {
             for (let i = 0; i < this.order.length; i++) {
                 const point = this.point(this.order[i]);
                 this.ctx.fillStyle = this.color;
-                this.ctx.beginPath()
-                this.ctx.arc(point.x, point.y, 2, 0, Math.PI * 2);
+                this.ctx.beginPath();
+                this.ctx.arc(point.dx, point.dy, 2, 0, Math.PI * 2);
                 this.ctx.closePath();
                 this.ctx.fill();
             }
 
             this.ctx.beginPath();
-            this.ctx.strokeStyle = this.edgeColor;
-
             for (let i = 0; i < this.order.length; i++) {
                 const point = this.point(this.order[i]);
                 for (let ii = 0; ii < point.links.length; ii++) {
                     const link = this.point(point.links[ii]);
-                    this.ctx.moveTo(point.x, point.y);
-                    this.ctx.lineTo(link.x, link.y);
+                    this.ctx.strokeStyle = this.linkColor;
+                    this.ctx.moveTo(point.dx, point.dy);
+                    this.ctx.lineTo(link.dx, link.dy);
+
                 }
             }
-
             this.ctx.stroke();
+
         }
 
         requestAnimationFrame(() => this.renderLoop());
@@ -112,6 +113,8 @@ class Renderer {
                 key,
                 x: (Math.random() * (width + 100)) - 50,
                 y: (Math.random() * (height + 100)) - 50,
+                dx: 0,
+                dy: 0,
                 stagger,
                 links: []
             }

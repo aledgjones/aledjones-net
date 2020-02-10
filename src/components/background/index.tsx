@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { throttle } from 'lodash';
+import React, { useEffect, useRef, CSSProperties } from 'react';
+import { debounce } from 'lodash';
 import { Event } from './event';
 
 import myWorker from './background.worker';
@@ -7,10 +7,11 @@ import myWorker from './background.worker';
 import './styles.css';
 
 interface Props {
+    style?: CSSProperties;
     color: string;
 }
 
-export const Background: React.FC<Props> = ({ color }) => {
+export const Background: React.FC<Props> = ({ style, color }) => {
 
     const canvas = useRef<HTMLCanvasElement>(null);
 
@@ -24,15 +25,15 @@ export const Background: React.FC<Props> = ({ color }) => {
                 type: Event.init,
                 color,
                 canvas: offscreen,
-                width: window.innerWidth * devicePixelRatio,
-                height: 600 * devicePixelRatio
+                width: window.innerWidth,
+                height: 600
             }, [offscreen]);
 
-            const resize = throttle(() => {
+            const resize = debounce(() => {
                 worker.postMessage({
                     type: Event.resize,
-                    width: window.innerWidth * devicePixelRatio,
-                    height: 600 * devicePixelRatio
+                    width: window.innerWidth,
+                    height: 600
                 });
             }, 1000 / 30);
 
@@ -44,7 +45,7 @@ export const Background: React.FC<Props> = ({ color }) => {
         }
     }, [color, canvas]);
 
-    return <div className="background">
+    return <div style={style} className="background">
         <canvas ref={canvas} />
         <div className="background__scrim" />
     </div>;
