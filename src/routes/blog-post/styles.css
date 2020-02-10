@@ -38,6 +38,7 @@
     color: rgb(255,255,255,.7);
     text-align: justify;
     margin-bottom: 20px;
+    line-height: 1.4em;
 }
 
 .blog-post__content p:last-child {
@@ -60,15 +61,16 @@
 }
 
 .blog-post__content code {
+    padding: 1px 2px;
+    background-color: rgba(255,255,255,.1) !important;
+}
+
+.blog-post__content pre code {
     display: block;
     padding: 20px;
     border-left: 4px solid #ffffff;
     background-color: rgba(255,255,255,.1) !important;
     margin-bottom: 20px;
-}
-
-.blog-post__content code {
-    background-color: transparent;
 }
 
 .blog-post__content pre, .blog-post__content pre * {
@@ -81,6 +83,7 @@
     display: block;
     padding: 20px;
     margin: 0 0 20px 0;
+    line-height: 1.4em;
 }
 
 .blog-post__content a:hover {
@@ -98,5 +101,6 @@
 
 .blog-post__content li {
     padding-left: 8px;
+    line-height: 1.4em;
 }
 

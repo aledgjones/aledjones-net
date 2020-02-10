@@ -1,11 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useScrollListener } from '../../ui/utils/use-scroll-listener';
+import { merge } from '../../ui/utils/merge';
 
 import './styles.css';
 
 export const ShellHeader: React.FC = () => {
 
-    return <div className="shell__header-container">
+    const y = useScrollListener();
+
+    return <div className={merge("shell__header-container", { 'shell__header-container--over': y > 0 })}>
         <header className="shell__header center-block">
             <Link to="/" className="shell__nav-item shell__hide-small">
                 <span>aledjones</span>
