@@ -14,6 +14,7 @@
 
 .blog-post__share {
     display: flex;
+    justify-content: center;
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -21,86 +22,9 @@
 .blog-post__share-item {
     padding: 8px !important;
     background-color: rgba(255,255,255,.1) !important;
-    transition: background-color .2s;
     margin-right: 8px;
 }
 
 .blog-post__share-item:hover {
     background-color: rgb(255,255,255,.3) !important;
 }
-
-.blog-post__content h1, .blog-post__content h2, .blog-post__content h3, .blog-post__content h4 {
-    color: #ffffff;
-    margin-bottom: 20px;
-}
-
-.blog-post__content p {
-    color: rgb(255,255,255,.7);
-    text-align: justify;
-    margin-bottom: 20px;
-    line-height: 1.4em;
-}
-
-.blog-post__content p:last-child {
-    margin-bottom: 0;
-}
-
-.blog-post__content h3 {
-    display: inline-block;
-    font-size: 24px;
-    font-weight: bold;
-}
-
-.blog-post__content h4 {
-    font-size: 18px;
-    font-weight: bold;
-}
-
-.blog-post__content h3:not(:first-child) {
-    margin-top: 60px;
-}
-
-.blog-post__content code {
-    padding: 1px 2px;
-    background-color: rgba(255,255,255,.1) !important;
-}
-
-.blog-post__content pre code {
-    display: block;
-    padding: 20px;
-    border-left: 4px solid #ffffff;
-    background-color: rgba(255,255,255,.1) !important;
-    margin-bottom: 20px;
-}
-
-.blog-post__content pre, .blog-post__content pre * {
-    user-select: text;
-    cursor: text;
-}
-
-.blog-post__content blockquote {
-    position: relative;
-    display: block;
-    padding: 20px;
-    margin: 0 0 20px 0;
-    line-height: 1.4em;
-}
-
-.blog-post__content a:hover {
-    text-decoration: underline;
-}
-
-.blog-post__content img {
-    width: 100%;
-}
-
-.blog-post__content ol {
-    color: rgb(255,255,255,.7);
-    list-style: upper-roman;
-}
-
-.blog-post__content li {
-    padding-left: 8px;
-    line-height: 1.4em;
-}
-

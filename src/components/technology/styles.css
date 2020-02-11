@@ -1,0 +1,8 @@
+.technology {
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    color: white;
+    margin: 0 10px;
+    font-size: 12px;
+}

@@ -3,27 +3,20 @@ import { EmailShareButton, FacebookShareButton, TwitterShareButton, LinkedinShar
 import { mdiEmoticonSadOutline, mdiEmail, mdiFacebookBox, mdiTwitterBox, mdiLinkedinBox } from '@mdi/js';
 import { useParams, Link } from "react-router-dom";
 
+import { MarkdownContent } from '../../components/markdown-content';
 import { Spinner, Icon, Button } from '../../ui';
-import { useStyle } from '../../ui/utils/style';
 
 import { Header } from '../../components/header';
-import { useBlogPost, useStore } from '../../shell/store';
+import { useBlogPost } from "../../store/use-blog-post";
 import { Transition } from '../../components/transition';
 import { Tags } from '../../components/tags';
-import Color from 'color';
 
 import './styles.css';
-import 'highlight.js/styles/vs2015.css';
 
 export const BlogPost: React.FC = () => {
 
     const { slug } = useParams();
     const { post, loading } = useBlogPost(slug);
-    const theme = useStore(s => s.ui.theme);
-
-    useStyle(`.blog-post__content blockquote { border-left: 4px solid ${theme}; background-color: ${Color(theme).alpha(.1).toString()}; }`);
-    useStyle(`.blog-post__content a { color: ${theme}; }`);
-    useStyle(`.blog-post__content blockquote > p { color: ${theme} !important; }`);
 
     // loading
     if (loading) {
@@ -57,7 +50,7 @@ export const BlogPost: React.FC = () => {
                 <Tags className="blog-post__tags" tags={post.tags} />
             </Header>
             <div className="center-block">
-                <div className="blog-post__content" dangerouslySetInnerHTML={{ __html: post.content }} />
+                <MarkdownContent markdown={post.content} />
             </div>
         </Transition>;
     }

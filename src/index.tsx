@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { Shell } from './shell';
+import { Shell } from './components/shell';
 
 import * as serviceWorker from './serviceWorker';
 

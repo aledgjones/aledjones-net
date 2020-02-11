@@ -1,0 +1,114 @@
+@keyframes pulse {
+    0%, 25% {
+        opacity: .2;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(2.5);
+    }
+}
+
+.blob {
+    position: absolute;
+    width: 0;
+    height: 0;
+}
+
+.blob:after {
+    /* touch target */
+    position: absolute;
+    content: '';
+    height: 48px;
+    width: 48px;
+    top: -24px;
+    left: -24px;
+    cursor: pointer;
+}
+
+.blob:hover {
+    z-index: 100;
+}
+
+.blob__circle {
+    position: absolute;
+    top: -18px;
+    left: -18px;
+    height: 36px;
+    width: 36px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 6px rgba(0, 0, 0, .23);
+    z-index: 2;
+    transition: width .2s, height .2s, left .2s, top .2s, border-radius .2s, box-shadow .2s;
+    transform: translate3d(0, 0, 0);
+    pointer-events: none;
+}
+
+.blob__circle:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    height: 0;
+    width: 0;
+    border-top: 18px solid #ffffff;
+    border-left: 18px solid transparent;
+    border-right: 18px solid transparent;
+    left: calc(50% - 18px);
+    transition: bottom .2s, opacity .2s;
+}
+
+.blob:hover .blob__circle {
+    width: 260px;
+    height: 140px;
+    left: -130px;
+    top: -158px;
+    border-radius: 3px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, .16), 0 3px 20px rgba(0, 0, 0, .23);
+}
+
+.blob:hover .blob__circle:after {
+    bottom: -18px;
+}
+
+.blob__pulse {
+    position: absolute;
+    top: -18px;
+    left: -18px;
+    height: 36px;
+    width: 36px;
+    background-color: #ffffff;
+    animation: pulse 2s 1.5s infinite;
+    animation-fill-mode: both;
+    z-index: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    transition: opacity .2s;
+}
+
+.blob:hover .blob__pulse {
+    animation: none;
+    opacity: 0 !important;
+}
+
+.blob__label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    pointer-events: none;
+    width: 260px;
+    height: 140px;
+    left: -130px;
+    top: -158px;
+    z-index: 3;
+    padding: 20px;
+    text-align: center;
+    opacity: 0;
+    transition: opacity .1s;
+}
+
+.blob:hover .blob__label {
+    opacity: 1;
+    transition: opacity .2s .1s;
+}

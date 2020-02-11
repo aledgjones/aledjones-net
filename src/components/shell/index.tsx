@@ -1,18 +1,21 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
-import { useStore, loadPostSummaries } from './store';
-import { Background } from '../components/background';
-import { ShellHeader } from '../components/shell-header';
+import { useStore } from '../../store';
+import { loadPostSummaries } from "../../store/load-post-summaries";
 
-import { Home } from '../routes/home';
-import { Portfolio } from '../routes/portfolio';
-import { Blog } from '../routes/blog';
-import { Contact } from '../routes/contact';
-import { ShellFooter } from '../components/footer';
-import { BlogPost } from '../routes/blog-post';
+import { Background } from '../background';
+import { ShellHeader } from '../shell-header';
+import { ShellFooter } from '../shell-footer';
 
-import './shell.css';
+import { Home } from '../../routes/home';
+import { Portfolio } from '../../routes/portfolio';
+import { PortfolioPost } from '../../routes/portfolio-post';
+import { Blog } from '../../routes/blog';
+import { BlogPost } from '../../routes/blog-post';
+import { Contact } from '../../routes/contact';
+
+import './styles.css';
 
 export const Shell: React.FC = () => {
 
@@ -23,15 +26,18 @@ export const Shell: React.FC = () => {
     const theme = useStore(s => s.ui.theme);
 
     return <Router>
-        <Background color={theme} />
+        <Background color={theme} highlight="#ef0665" />
         <ShellHeader />    
 
         <Switch>
             <Route exact path="/">
                 <Home />
             </Route>
-            <Route path="/portfolio">
+            <Route exact path="/portfolio">
                 <Portfolio />
+            </Route>
+            <Route path="/portfolio/:slug">
+                <PortfolioPost />
             </Route>
             <Route exact path="/blog">
                 <Blog />

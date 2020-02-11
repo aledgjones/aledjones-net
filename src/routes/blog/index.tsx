@@ -4,7 +4,8 @@ import { mdiOpenInNew, mdiEmoticonSadOutline } from '@mdi/js';
 import { Icon, Spinner, Image, Button } from '../../ui';
 
 import { Header } from '../../components/header';
-import { useStore, BlogPostSummary, LoadState, loadPostSummaries } from '../../shell/store';
+import { useStore, BlogPostSummary, LoadState } from '../../store';
+import { loadPostSummaries } from "../../store/load-post-summaries";
 import { Transition } from '../../components/transition';
 import { Link, useParams } from 'react-router-dom';
 import { Tags } from '../../components/tags';

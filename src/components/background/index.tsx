@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, CSSProperties } from 'react';
 import { debounce } from 'lodash';
-import { Event } from './event';
+import { Event, InitMessage, ResizeMessage } from './event';
 
 import myWorker from './background.worker';
 
@@ -9,9 +9,10 @@ import './styles.css';
 interface Props {
     style?: CSSProperties;
     color: string;
+    highlight: string;
 }
 
-export const Background: React.FC<Props> = ({ style, color }) => {
+export const Background: React.FC<Props> = ({ style, color, highlight }) => {
 
     const canvas = useRef<HTMLCanvasElement>(null);
 
@@ -21,20 +22,24 @@ export const Background: React.FC<Props> = ({ style, color }) => {
             const offscreen = canvas.current.transferControlToOffscreen() as any;
             const worker = new myWorker() as Worker;
 
-            worker.postMessage({
+            const config: InitMessage = {
                 type: Event.init,
                 color,
+                highlight,
                 canvas: offscreen,
                 width: window.innerWidth,
                 height: 600
-            }, [offscreen]);
+            };
+
+            worker.postMessage(config, [offscreen]);
 
             const resize = debounce(() => {
-                worker.postMessage({
+                const config: ResizeMessage = {
                     type: Event.resize,
                     width: window.innerWidth,
                     height: 600
-                });
+                }
+                worker.postMessage(config);
             }, 1000 / 30);
 
             window.addEventListener('resize', resize);
@@ -43,7 +48,7 @@ export const Background: React.FC<Props> = ({ style, color }) => {
                 window.removeEventListener('resize', resize);
             }
         }
-    }, [color, canvas]);
+    }, [color, highlight, canvas]);
 
     return <div style={style} className="background">
         <canvas ref={canvas} />

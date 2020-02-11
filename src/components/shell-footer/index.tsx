@@ -10,7 +10,7 @@ export const ShellFooter: React.FC = () => {
         return `2017 - ${new Date().getFullYear()}`;
     }, []);
 
-    return <div className="footer center-block">
+    return <footer className="footer center-block">
         <div className="footer__social">
             <Icon className="footer__icon" path={mdiTwitter} color="#ffffff" size={36} />
             <Icon className="footer__icon" path={mdiLinkedin} color="#ffffff" size={36} />
@@ -23,5 +23,5 @@ export const ShellFooter: React.FC = () => {
             </p>
             <p>Copyright &copy; Aled Jones {copyright}</p>
         </div>
-    </div>
+    </footer>
 }

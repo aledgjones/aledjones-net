@@ -1,0 +1,112 @@
+.portfolio-post--loading {
+    padding-top: calc(218px / 2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    min-height: calc(100vh - 218px);
+    color: #ffffff;
+}
+
+.portfolio-post h3 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ffffff;
+}
+
+.portfolio-post p {
+    color: rgb(255, 255, 255, .7);
+    text-align: justify;
+    margin-bottom: 20px;
+    line-height: 1.4em;
+}
+
+.portfolio-post p:last-child {
+    margin-bottom: 0;
+}
+
+.portfolio-post__url {
+    margin-top: 20px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px 4px 4px;
+    cursor: pointer;
+}
+
+.portfolio-post__url:hover {
+    background-color: rgba(255, 255, 255, .1);
+}
+
+.portfolio-post__mac {
+    position: relative;
+    margin: 0 56px;
+}
+
+.portfolio-post__mac-image {
+    position: relative;
+    z-index: 1;
+}
+
+.portfolio-post__screen {
+    position: absolute;
+    top: 4.5%;
+    left: 3.5%;
+    width: 93%;
+    height: 63%;
+    background-size: cover;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-color: #000000;
+}
+
+.portfolio-post__arrow {
+    position: absolute;
+    top: calc(36% - 12px);
+    z-index: 2;
+}
+
+.portfolio-post__arrow--left {
+    left: -48px;
+}
+
+.portfolio-post__arrow--right {
+    right: -48px;
+}
+
+.portfolio-post__blobs {
+    position: absolute;
+    top: 4.5%;
+    left: 3.5%;
+    width: 93%;
+    height: 63%;
+    z-index: 3;
+}
+
+.portfolio-post__section--one {
+    position: relative;
+    z-index: 2;
+}
+
+.portfolio-post__section--two {
+    position: relative;
+    z-index: 1;
+    background-color: rgb(40, 40, 40);
+    margin-top: -60px;
+    padding: 120px 0 60px 0;
+}
+
+.portfolio-post__section--four {
+    position: relative;
+    z-index: 1;
+    padding: 60px 0;
+}
+
+.portfolio-post__technologies {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
