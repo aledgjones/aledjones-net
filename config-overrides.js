@@ -4,7 +4,7 @@ module.exports = function override(config, env) {
   // compile workers.
   config.module.rules.unshift({
     test: /\.worker\.ts$/,
-    use: { loader: 'worker-loader' }
+    use: { loader: 'worker-loader', options: { fallback: true } }
   });
   return config;
 }
