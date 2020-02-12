@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react';
-import { mdiLanguageHtml5, mdiLanguageTypescript, mdiLanguageCss3, mdiLanguagePhp, mdiJquery, mdiDatabase } from '@mdi/js';
+import { mdiReact, mdiLanguageHtml5, mdiLanguageTypescript, mdiLanguageCss3, mdiLanguagePhp, mdiJquery, mdiDatabase, mdiAngularjs, mdiNodejs, mdiFirebase } from '@mdi/js';
 import { Icon } from '../../ui';
 
 import './styles.css';
@@ -22,6 +22,14 @@ export const Technology: React.FC<Props> = ({ name }) => {
                 return mdiJquery;
             case 'mySQL':
                 return mdiDatabase;
+            case 'AngularJS':
+                return mdiAngularjs;
+            case 'React':
+                return mdiReact;
+            case 'NodeJS':
+                return mdiNodejs;
+            case 'Firebase':
+                return mdiFirebase;
             case 'Typescript':
             default:
                 return mdiLanguageTypescript;

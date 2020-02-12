@@ -48,6 +48,13 @@ export interface PortfolioPostSummary {
     date: string;
     title: string;
     subtitle: string;
+    thumb: Image[];
+    summary: string;
+    
+    featured: boolean;
+}
+
+export interface PortfolioPost extends PortfolioPostSummary {
     url: string;
     displayUrl: string;
     screenshots: Screenshot[];
@@ -56,11 +63,8 @@ export interface PortfolioPostSummary {
         server: string[];
     }
     brief: string;
-    
-    featured: boolean;
-}
-
-export interface PortfolioPost extends PortfolioPostSummary {
+    windowScreenshot: Image[];
+    windowScreenshotDescription: string;
     content: string;
 }
 

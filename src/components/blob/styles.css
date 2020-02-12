@@ -105,10 +105,12 @@
     padding: 20px;
     text-align: center;
     opacity: 0;
-    transition: opacity .1s;
+    transform: translateY(12px);
+    transition: opacity .1s, transform .2s;
 }
 
 .blob:hover .blob__label {
     opacity: 1;
-    transition: opacity .2s .1s;
+    transform: translateY(0);
+    transition: opacity .2s .1s, transform .2s .1s;
 }

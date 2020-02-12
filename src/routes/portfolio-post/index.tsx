@@ -8,12 +8,13 @@ import { Header } from '../../components/header';
 import { usePortfolioPost } from '../../store/use-portfolio-post';
 import { Transition } from '../../components/transition';
 import { MarkdownContent } from '../../components/markdown-content';
+import { Technologies } from '../../components/technologies';
 import { Blob } from '../../components/blob';
 
 import mac from '../../assets/mac.png';
+import chrome from '../../assets/chrome.png';
 
 import './styles.css';
-import { Technologies } from '../../components/technologies';
 
 export const PortfolioPost: React.FC = () => {
 
@@ -52,7 +53,7 @@ export const PortfolioPost: React.FC = () => {
                     <Icon onClick={() => setI(ii => i > 0 ? ii - 1 : 0)} disabled={i === 0} className="portfolio-post__arrow portfolio-post__arrow--left" path={mdiChevronLeft} color="#ffffff" size={36} />
                     <Icon onClick={() => setI(ii => i < len ? ii + 1 : len - 1)} disabled={i === len - 1} className="portfolio-post__arrow portfolio-post__arrow--right" path={mdiChevronRight} color="#ffffff" size={36} />
 
-                    <img className="portfolio-post__mac-image" src={mac} />
+                    <img alt="" className="portfolio-post__mac-image" src={mac} />
                     <div className="portfolio-post__screen" style={{ backgroundImage: `url(${screen.img})` }} />
                     <div className="portfolio-post__blobs">
                         {screen.blobs.map(blob => {
@@ -75,12 +76,26 @@ export const PortfolioPost: React.FC = () => {
                 </div>
             </div>
 
+            <div className="portfolio-post__desk" />
+
+            <div className="portfolio-post__section--three">
+                <div className="center-block">
+                    <figure className="portfolio-post__window-container">
+                        <div className="portfolio-post__window">
+                            <img alt="" className="portfolio-post__chrome" src={chrome} />
+                            <img alt="" className="portfolio-post__screenshot" src={post.windowScreenshot[0].url} />
+                        </div>
+                        <figcaption className="portfolio-post__caption">{post.windowScreenshotDescription}</figcaption>
+                    </figure>
+                </div>
+            </div>
+
             <div className="portfolio-post__section--four">
                 <div className="center-block">
                     <MarkdownContent markdown={post.content} />
                 </div>
             </div>
-        </Transition>;
+        </Transition >;
     }
 
     // not found
@@ -88,7 +103,7 @@ export const PortfolioPost: React.FC = () => {
         <div className="blog--loading center-block">
             <Icon path={mdiEmoticonSadOutline} color="#ffffff" size={64} />
             <p className="blog__lonely">Opps, something went wrong getting that post</p>
-            <Link to="/blog">
+            <Link to="/portfolio">
                 <Button color="white" outline compact>View all posts</Button>
             </Link>
         </div>
