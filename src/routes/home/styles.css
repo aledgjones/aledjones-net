@@ -5,7 +5,7 @@
 }
 
 .home__tile {
-    width: calc(40% - (40px / 3));
+    width: calc(50% - 10px);
 }
 
 .home__loader {
@@ -18,4 +18,23 @@
     position: absolute;
     top: calc(50% - 12px);
     left: calc(50% - 12px);
+}
+
+.home__failed {
+    background-color:rgba(255,255,255,.05);
+    padding: 20px;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    flex-direction: column;
+    color:white;
+}
+
+@media (max-width: 1000px) {
+    .home__tiles {
+        flex-direction: column;
+    }
+    .home__tile {
+        width: 100%;
+    }
 }

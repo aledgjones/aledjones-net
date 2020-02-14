@@ -10,6 +10,7 @@ import { Header } from '../../components/header';
 import { Transition } from '../../components/transition';
 
 import './styles.css';
+import { PortfolioEntry } from '../../components/portfolio-entry';
 
 export const Portfolio: React.FC = () => {
 
@@ -42,23 +43,7 @@ export const Portfolio: React.FC = () => {
         return <Transition>
             <Header title="Portfolio" subtitle="Recent Commissions &amp; Projects" />
             <div className="center-block">
-                {posts.map(post => {
-                    return <div key={post.id} className="portfolio-entry">
-                        <div className="portfolio-entry__image-container">
-                            <Link to={`/portfolio/${post.slug}`}>
-                                <Image size="contain" className="portfolio-entry__image" src={post.thumb[0].url} x={16} y={9} color="rgba(255,255,255,.05)" />
-                                <Icon className="portfolio-entry__icon" path={mdiOpenInNew} color="#ffffff" size={24} />
-                            </Link>
-                        </div>
-                        <div className="portfolio-entry__content">
-                            <Link to={`/portfolio/${post.slug}`}>
-                                <h2 className="portfolio-entry__title">{post.title}</h2>
-                            </Link>
-                            <h3 className="portfolio-entry__subtitle">{post.subtitle}</h3>
-                            <p className="portfolio-entry__summary">{post.summary}</p>
-                        </div>
-                    </div>
-                })}
+                {posts.map(post => <PortfolioEntry key={post.id} entry={post} />)}
             </div>
         </Transition>;
     }

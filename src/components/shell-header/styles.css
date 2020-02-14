@@ -4,8 +4,8 @@
     left: 0;
     width: 100%;
     z-index: 1000000;
-    background-color: rgba(20,20,20,.9);
-    box-shadow: 0 0 8px rgba(0,0,0,.5);
+    background-color: rgba(20, 20, 20, .9);
+    box-shadow: 0 0 8px rgba(0, 0, 0, .5);
     backdrop-filter: blur(10px);
 }
 
@@ -50,9 +50,13 @@
     background-color: rgba(255, 255, 255, .1);
 }
 
+.shell__hide-big {
+    display: none;
+}
+
 @media (max-width: 1000px) {
-    .shell__header {
-        justify-content: center;
+    .shell__hide-big {
+        display: block;
     }
     .shell__hide-small {
         display: none;

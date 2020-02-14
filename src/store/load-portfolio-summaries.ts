@@ -10,7 +10,7 @@ export const loadPortfolioSummaries = async () => {
     const posts = await app.content.get({
         schemaKey: 'portfolio',
         populate: ['thumb'],
-        fields: ['id', 'slug', 'date', 'title', 'subtitle', 'thumb', 'summary'],
+        fields: ['id', 'slug', 'date', 'title', 'subtitle', 'thumb', 'summary', 'featured'],
         orderBy: { field: 'date', order: 'desc' },
         filters: [['publish', '==', true]]
     });
