@@ -5,7 +5,7 @@ import { Icon, Spinner, Image, Button } from '../../ui';
 
 import { Header } from '../../components/header';
 import { useStore, BlogPostSummary, LoadState } from '../../store';
-import { loadPostSummaries } from "../../store/load-post-summaries";
+import { loadBlogSummaries } from "../../store/load-blog-summaries";
 import { Transition } from '../../components/transition';
 import { Link, useParams } from 'react-router-dom';
 import { Tags } from '../../components/tags';
@@ -16,7 +16,7 @@ export const Blog: React.FC = () => {
 
     const { tag } = useParams();
 
-    const { state, _posts } = useStore<{ state: LoadState, _posts: BlogPostSummary[] }>(s => {
+    const { state, _posts } = useStore(s => {
         return {
             state: s.blog.state,
             _posts: s.blog.posts
@@ -44,7 +44,7 @@ export const Blog: React.FC = () => {
             <div className="blog--loading center-block">
                 <Icon path={mdiEmoticonSadOutline} color="#ffffff" size={64} />
                 <p className="blog__lonely">Opps, something went wrong getting the posts</p>
-                <Button color="white" outline compact onClick={() => loadPostSummaries()}>Retry</Button>
+                <Button color="white" outline compact onClick={() => loadBlogSummaries()}>Retry</Button>
             </div>
         </Transition>;
     }
@@ -70,7 +70,7 @@ export const Blog: React.FC = () => {
                     return <div key={post.id} className="blog-entry">
                         <div className="blog-entry__image-container">
                             <Link to={`/blog/posts/${post.slug}`}>
-                                <Image className="blog-entry__image" src={post.image[0].url} x={16} y={9} color="rgba(255,255,255,.05)" />
+                                <Image size="cover" className="blog-entry__image" src={post.image[0].url} x={16} y={9} color="rgba(255,255,255,.05)" />
                                 <Icon className="blog-entry__icon" path={mdiOpenInNew} color="#ffffff" size={24} />
                             </Link>
                         </div>

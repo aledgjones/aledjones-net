@@ -1,0 +1,14 @@
+.home__tiles {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.home__tile {
+    width: calc((100% / 3) - (40px / 3));
+}
+
+.home__loader {
+    background-color: rgba(255,255,255,.05);
+    padding: 40px;
+}

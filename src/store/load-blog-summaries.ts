@@ -1,6 +1,6 @@
 import { app } from "./flamelink";
 import { store, LoadState } from ".";
-export const loadPostSummaries = async () => {
+export const loadBlogSummaries = async () => {
     store.update(s => {
         s.blog.state = LoadState.loading;
         s.blog.posts = [];

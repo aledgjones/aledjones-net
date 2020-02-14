@@ -35,6 +35,8 @@
     width: 100%;
     background-size: cover;
     background-position: 50% 50%;
+    background-repeat: no-repeat;
     animation-fill-mode: both;
     animation: image-in 2s, image-bloom 5s;
+    z-index: 1;
 }

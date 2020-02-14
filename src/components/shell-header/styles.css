@@ -6,7 +6,7 @@
     z-index: 1000000;
     background-color: rgba(20,20,20,.9);
     box-shadow: 0 0 8px rgba(0,0,0,.5);
-    backdrop-filter: blur(2px);
+    backdrop-filter: blur(10px);
 }
 
 .shell__header {

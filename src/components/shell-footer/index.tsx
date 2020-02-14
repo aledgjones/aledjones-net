@@ -12,9 +12,15 @@ export const ShellFooter: React.FC = () => {
 
     return <footer className="footer center-block">
         <div className="footer__social">
-            <Icon className="footer__icon" path={mdiTwitter} color="#ffffff" size={36} />
-            <Icon className="footer__icon" path={mdiLinkedin} color="#ffffff" size={36} />
-            <Icon className="footer__icon" path={mdiGithubCircle} color="#ffffff" size={36} />
+            <a href="https://twitter.com/aledjones" target="_blank">
+                <Icon className="footer__icon" path={mdiTwitter} color="#ffffff" size={36} />
+            </a>
+            <a href="https://www.linkedin.com/in/aledgjones/" target="_blank">
+                <Icon className="footer__icon" path={mdiLinkedin} color="#ffffff" size={36} />
+            </a>
+            <a href="https://github.com/aledgjones" target="_blank">
+                <Icon className="footer__icon" path={mdiGithubCircle} color="#ffffff" size={36} />
+            </a>
         </div>
         <div className="footer__center">
             <p className="footer__spacer">

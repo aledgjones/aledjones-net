@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route, Redirect } from "react-router-dom";
 
 import { useStore } from '../../store';
-import { loadPostSummaries } from "../../store/load-post-summaries";
+import { loadBlogSummaries } from "../../store/load-blog-summaries";
+import { loadPortfolioSummaries } from '../../store/load-portfolio-summaries';
 
 import { Background } from '../background';
 import { ShellHeader } from '../shell-header';
@@ -20,7 +21,8 @@ import './styles.css';
 export const Shell: React.FC = () => {
 
     useEffect(() => {
-        loadPostSummaries();
+        loadBlogSummaries();
+        loadPortfolioSummaries();
     }, []);
 
     const theme = useStore(s => s.ui.theme);

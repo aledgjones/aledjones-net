@@ -10,11 +10,12 @@ interface Props {
     className?: string;
     color: string;
     src: string;
+    size: 'cover' | 'contain';
     x: number;
     y: number;
 }
 
-export const Image: FC<Props> = ({ id, className, color, src, x, y, children }) => {
+export const Image: FC<Props> = ({ id, className, color, src, size, x, y, children }) => {
 
     const [loading, setLoading] = useState(true);
     const [url, setUrl] = useState<string | null>(null);
@@ -50,7 +51,7 @@ export const Image: FC<Props> = ({ id, className, color, src, x, y, children }) 
         className={merge('ui-image', className)}
     >
         {loading && <Spinner className="ui-image__spinner" color="#ffffff" size={24} />}
-        {(!loading && url) && <div className="ui-image__canvas" style={{ backgroundImage: `url(${url})` }} />}
+        {(!loading && url) && <div className="ui-image__canvas" style={{ backgroundSize: size, backgroundImage: `url(${url})` }} />}
         {children}
     </div>
 }

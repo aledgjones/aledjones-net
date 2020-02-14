@@ -19,10 +19,11 @@ export interface BlogPostSummary {
     summary: string;
     tags: string[];
     image: Image[];
-    featured: boolean;
     avatar: Image[];
     author: string;
     readTime: number;
+
+    featured: boolean;
 }
 
 export interface BlogPost extends BlogPostSummary {
@@ -74,7 +75,11 @@ interface IStore {
     }
     blog: {
         state: LoadState;
-        posts: BlogPostSummary[]
+        posts: BlogPostSummary[];
+    }
+    portfolio: {
+        state: LoadState;
+        posts: PortfolioPostSummary[];
     }
 }
 
@@ -83,6 +88,10 @@ export const store = new Store<IStore>({
         theme: "#039BE5"
     },
     blog: {
+        state: LoadState.loading,
+        posts: []
+    },
+    portfolio: {
         state: LoadState.loading,
         posts: []
     }
