@@ -1,17 +1,16 @@
 import React, { useMemo } from 'react';
-import { mdiOpenInNew, mdiEmoticonSadOutline } from '@mdi/js';
+import { Link, useParams } from 'react-router-dom';
+import { mdiEmoticonSadOutline } from '@mdi/js';
 
-import { Icon, Spinner, Image, Button } from '../../ui';
+import { Icon, Spinner, Button } from '../../ui';
 
 import { Header } from '../../components/header';
-import { useStore, BlogPostSummary, LoadState } from '../../store';
+import { useStore, LoadState } from '../../store';
 import { loadBlogSummaries } from "../../store/load-blog-summaries";
+import { BlogEntry } from '../../components/blog-entry';
 import { Transition } from '../../components/transition';
-import { Link, useParams } from 'react-router-dom';
-import { Tags } from '../../components/tags';
 
 import './styles.css';
-import { BlogEntry } from '../../components/blog-entry';
 
 export const Blog: React.FC = () => {
 

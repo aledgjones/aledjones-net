@@ -1,10 +1,9 @@
 import React from 'react';
-import { mdiEmoticonSadOutline, mdiOpenInNew } from '@mdi/js';
-import { Link } from 'react-router-dom';
+import { mdiEmoticonSadOutline } from '@mdi/js';
 
 import { loadPortfolioSummaries } from '../../store/load-portfolio-summaries';
-import { PortfolioPostSummary, LoadState, useStore } from '../../store';
-import { Spinner, Icon, Button, Image } from '../../ui';
+import { LoadState, useStore } from '../../store';
+import { Spinner, Icon, Button } from '../../ui';
 
 import { Header } from '../../components/header';
 import { Transition } from '../../components/transition';

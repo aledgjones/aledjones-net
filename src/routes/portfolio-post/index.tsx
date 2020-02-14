@@ -41,10 +41,10 @@ export const PortfolioPost: React.FC = () => {
         return <Transition className="portfolio-post">
 
             <Header title={post.title} subtitle={post.subtitle}>
-                <Link className="portfolio-post__url" to={post.url}>
+                <a className="portfolio-post__url" href={post.url} target="_blank"  rel="noopener noreferrer">
                     <Icon style={{ marginRight: 8 }} path={mdiOpenInNew} size={24} color="#ffffff" />
                     <span>{post.displayUrl}</span>
-                </Link>
+                </a>
             </Header>
 
             <div className="portfolio-post__section--one center-block">

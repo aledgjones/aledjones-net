@@ -1,11 +1,11 @@
-.home__tiles {
+.home__columns {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
 }
 
-.home__tile {
-    width: calc(50% - 10px);
+.home__column {
+    width: calc(50% - 20px);
 }
 
 .home__loader {
@@ -21,20 +21,49 @@
 }
 
 .home__failed {
-    background-color:rgba(255,255,255,.05);
+    background-color: rgba(255, 255, 255, .05);
     padding: 20px;
     display: flex;
-    align-items:center;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
-    color:white;
+    color: white;
+}
+
+.home__about {
+    margin-bottom: 60px;
+}
+
+.home__skills h3 {
+    color: white;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.home__skills h2, .home__about h2 {
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.home__about p {
+    font-size: 18px;
+    color: rgba(255, 255, 255, .8);
+    text-align: justify;
+    line-height: 1.4em;
+}
+
+.home__tiles {
+    margin-bottom: 40px;
 }
 
 @media (max-width: 1000px) {
-    .home__tiles {
+    .home__columns {
         flex-direction: column;
     }
-    .home__tile {
+    .home__column {
         width: 100%;
     }
 }

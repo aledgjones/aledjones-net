@@ -19,7 +19,7 @@
    inkscape:export-xdpi="93.15976"
    inkscape:export-ydpi="93.15976"
    inkscape:version="0.92.4 5da689c313, 2019-01-14"
-   sodipodi:docname="web-worker.svg.2020_02_10_00_44_31.0.svg">
+   sodipodi:docname="web-worker.svg">
   <defs
      id="defs2">
     <linearGradient
@@ -288,10 +288,10 @@
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
      inkscape:zoom="1.4142136"
-     inkscape:cx="354.78201"
+     inkscape:cx="275.58605"
      inkscape:cy="139.83473"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer6"
+     inkscape:current-layer="layer8"
      showgrid="false"
      units="px"
      inkscape:window-width="1366"
@@ -382,8 +382,7 @@
      inkscape:groupmode="layer"
      id="layer4"
      inkscape:label="cubes 2"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <g
        style="display:inline;opacity:1"
        id="g2642"
@@ -447,15 +446,14 @@
      inkscape:groupmode="layer"
      id="layer8"
      inkscape:label="lines 1"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <path
        style="fill:none;stroke:#ffffff;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.05833327, 1.05833327;stroke-dashoffset:0;stroke-opacity:1"
        d="m 28.578839,25.637498 38.971143,22.5 v -5.000001"
        id="path2679"
        inkscape:connector-curvature="0" />
     <path
-       style="fill:none;stroke:#ffffff;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.05833327, 1.05833327;stroke-dashoffset:0;stroke-opacity:1"
+       style="fill:none;stroke:#ff00ff;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
        d="m 126.43971,16.312499 -19.05256,11"
        id="path1263"
        inkscape:connector-curvature="0"
@@ -465,8 +463,7 @@
      inkscape:groupmode="layer"
      id="layer14"
      inkscape:label="ping"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <g
        id="g1298"
        transform="translate(0.86602467,-0.61666693)">
@@ -500,14 +497,13 @@
      inkscape:groupmode="layer"
      id="layer13"
      inkscape:label="lines 4"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <path
        sodipodi:nodetypes="ccc"
        inkscape:connector-curvature="0"
        id="path1261"
        d="M 105.6551,28.312499 70.148058,48.637498 v -4.470835"
-       style="display:inline;fill:none;stroke:#ff00ff;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1" />
+       style="display:inline;fill:none;stroke:#ffffff;stroke-width:0.26499999;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:0.79499996,0.79499996;stroke-dashoffset:0;stroke-opacity:1" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -525,8 +521,7 @@
      inkscape:groupmode="layer"
      id="layer9"
      inkscape:label="glowing"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <g
        id="g2711"
        transform="translate(-34.64102,-22.824997)"
@@ -592,8 +587,7 @@
      inkscape:groupmode="layer"
      id="layer11"
      inkscape:label="cubes 1"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <path
        inkscape:connector-curvature="0"
        id="path2653"
@@ -614,8 +608,7 @@
      inkscape:groupmode="layer"
      id="layer10"
      inkscape:label="lines 2"
-     style="display:inline"
-     sodipodi:insensitive="true">
+     style="display:inline">
     <path
        style="display:inline;fill:none;stroke:#ffffff;stroke-width:0.26458332;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1.05833327, 1.05833327;stroke-dashoffset:0;stroke-opacity:1"
        d="M 32.908965,70.250004 65.817931,51.429167"
@@ -633,8 +626,7 @@
      inkscape:groupmode="layer"
      id="layer7"
      inkscape:label="cubes"
-     style="display:inline;opacity:1"
-     sodipodi:insensitive="true">
+     style="display:inline;opacity:1">
     <g
        id="g2628"
        transform="translate(-1.5458693e-6,-4.0000003)">

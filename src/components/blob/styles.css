@@ -26,7 +26,7 @@
     cursor: pointer;
 }
 
-.blob:hover {
+.blob:hover, .blob:focus {
     z-index: 100;
 }
 
@@ -58,7 +58,7 @@
     transition: bottom .2s, opacity .2s;
 }
 
-.blob:hover .blob__circle {
+.blob:hover .blob__circle, .blob:focus .blob__circle {
     width: 260px;
     height: 140px;
     left: -130px;
@@ -67,7 +67,7 @@
     box-shadow: 0 3px 6px rgba(0, 0, 0, .26), 0 3px 20px rgba(0, 0, 0, .33);
 }
 
-.blob:hover .blob__circle:after {
+.blob:hover .blob__circle:after, .blob:focus .blob__circle:after {
     bottom: -18px;
 }
 
@@ -86,7 +86,7 @@
     transition: opacity .2s;
 }
 
-.blob:hover .blob__pulse {
+.blob:hover .blob__pulse, .blob:focus .blob__pulse {
     animation: none;
     opacity: 0 !important;
 }
@@ -109,7 +109,7 @@
     transition: opacity .1s, transform .2s;
 }
 
-.blob:hover .blob__label {
+.blob:hover .blob__label, .blob:focus .blob__label {
     opacity: 1;
     transform: translateY(0);
     transition: opacity .2s .1s, transform .2s .1s;

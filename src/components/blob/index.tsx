@@ -9,7 +9,7 @@ interface Props {
 }
 
 export const Blob: React.FC<Props> = ({ x, y, label }) => {
-    return <div style={{ left: `${x}%`, top: `${y}%` }} className="blob">
+    return <div tabIndex={0} style={{ left: `${x}%`, top: `${y}%` }} className="blob">
         <div className="blob__circle" />
         <div className="blob__pulse" />
         <div className="blob__label">{label}</div>
